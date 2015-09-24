@@ -215,4 +215,22 @@ class rancid (
     mode    => '0600',
     content => $cloginrc_content_real,
   }
+
+  file {'ciscowlc5':
+    ensure  => file,
+    path    => '/usr/libexec/rancid/ciscowlc5',
+    owner   => 'rancid',
+    group   => 'rancid',
+    mode    => '770',
+    source  => 'puppet:///modules/rancid/ciscowlc5',
+  }
+
+  file {'wlogin':
+    ensure  => file,
+    path    => '/usr/libexec/rancid/wlogin',
+    owner   => 'rancid',
+    group   => 'rancid',
+    mode    => '770',
+    source  => 'puppet:///modules/rancid/wlogin',
+  }
 }
